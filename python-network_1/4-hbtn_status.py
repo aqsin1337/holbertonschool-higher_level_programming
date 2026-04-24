@@ -3,7 +3,9 @@
 import requests
 
 if __name__ == "__main__":
-    r = requests.get("https://intranet.hbtn.io/status", headers={'cfclearance': 'true'})
+    url = "https://intranet.hbtn.io/status"
+    headers = {'cfclearance': 'true'}
+    r = requests.get(url, headers=headers)
     print("Body response:")
     print("\t- type: {}".format(type(r.text)))
     print("\t- content: {}".format(r.text))

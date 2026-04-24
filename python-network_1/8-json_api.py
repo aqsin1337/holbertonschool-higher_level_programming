@@ -6,8 +6,10 @@ import requests
 if __name__ == "__main__":
     letter = "" if len(sys.argv) == 1 else sys.argv[1]
     payload = {"q": letter}
+    url = "http://0.0.0.0:5000/search_user"
+    headers = {'cfclearance': 'true'}
 
-    r = requests.post("http://0.0.0.0:5000/search_user", data=payload, headers={'cfclearance': 'true'})
+    r = requests.post(url, data=payload, headers=headers)
     try:
         response = r.json()
         if not response:

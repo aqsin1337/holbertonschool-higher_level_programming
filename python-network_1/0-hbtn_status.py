@@ -3,7 +3,9 @@
 import urllib.request
 
 if __name__ == "__main__":
-    req = urllib.request.Request("https://intranet.hbtn.io/status", headers={'cfclearance': 'true'})
+    url = "https://intranet.hbtn.io/status"
+    headers = {'cfclearance': 'true'}
+    req = urllib.request.Request(url, headers=headers)
     with urllib.request.urlopen(req) as response:
         body = response.read()
         print("Body response:")

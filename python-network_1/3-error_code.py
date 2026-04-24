@@ -7,7 +7,7 @@ import urllib.request
 if __name__ == "__main__":
     url = sys.argv[1]
     req = urllib.request.Request(url, headers={'cfclearance': 'true'})
-    
+
     try:
         with urllib.request.urlopen(req) as response:
             print(response.read().decode("utf-8"))
